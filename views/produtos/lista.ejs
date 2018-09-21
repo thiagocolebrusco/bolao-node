@@ -1,0 +1,20 @@
+<%- include("../_layout/header") -%>
+<h1>Produtos</h1>
+<a href="/produto/cadastro">Novo</a>
+<table style="width: 100%" border="1">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Valor</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% lista.forEach(function(item) { %>
+        <tr>
+            <td><%=item.nome%></td>
+            <td><%=item.valor%></td>
+        </tr>
+        <% }) %>
+    </tbody>
+</table>
+<%- include("../_layout/footer") -%>
