@@ -1,0 +1,30 @@
+<%- include("../_layout/header") %>
+<a href="/times/cadastro">Cadastro</a>
+
+<% if(typeof list !== 'undefined') { %>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Nome</td>
+                <td>Sigla</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var i = 0; i < list.length; i++) { %>
+            <tr>
+                <td><%- list[i].name %></td>
+                <td><%- list[i].acronym %></td>
+                <td>
+                    <a href="/times/cadastro/<%- list[i].id %>">Editar</a>
+                </td>
+                <td>
+                    <a href="/times/excluir/<%- list[i].id %>">Excluir</a>
+                </td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+<% } %>
+<%- include("../_layout/footer") %>
