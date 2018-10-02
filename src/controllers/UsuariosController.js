@@ -66,6 +66,27 @@ UsuariosController.prototype.excluir = function(id, callback) {
     }
 }
 
+UsuariosController.prototype.login = function(user, callback) {
+    if(!user || !user.username || !user.password) {
+        callback("Parâmetros inválidos");
+    } else {
+        var con = this.app.db.MysqlConnection();
+
+        con.connect(function(err) {
+            var sql = 'SELECT * FROM user WHERE username = ? AND password = ?';
+            con.query(sql, [ user.username, user.password ], function(err, result){
+                if(err)
+                    callback(err);
+                else if(!result) {
+                    callback("Usuário ou senha inválidos");
+                } else {
+                    callback(null, result[0]);
+                }
+            })
+        });
+    }
+}
+
 module.exports = function() {
     return UsuariosController;
 }

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Teste Layout</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <style>
+            body {
+                background-color: rgba(0, 150, 0, 0.6);
+            }
+
+            .login {
+                margin-top: 100px;
+                background-color: white;
+                color: green;
+                min-height: 300px;
+                box-shadow: 3px 3px 3px darkgreen;
+                border-radius: 20px;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">            
+            
+            <div class="row">
+                <form method="POST" action="/login" class="col-md-4 offset-4 login">
+                    <div class="row">
+                        <h4 class="col-md-12">
+                            Login
+                        </h4>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-md-12">
+                            Usuário
+                        </label>
+                        <div class="col-md-12">
+                            <input type="text" name="username" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-md-12">
+                            Senha
+                        </label>
+                        <div class="col-md-12">
+                            <input type="password" name="password" class="form-control">
+                        </div>
+                    </div>
+                    <% if(typeof message !== 'undefined') { %>
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <p class="alert alert-danger">
+                                <%=message%>
+                            </p>
+                        </div>
+                    </div>
+                    <% } %>
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <button class="btn btn-primary btn-block">Entrar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--[if lt IE 7]>
+                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+            <![endif]-->
+
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -5,6 +5,7 @@
     <table class="table">
         <thead>
             <tr>
+                <td>Logo</td>
                 <td>Nome</td>
                 <td>Sigla</td>
                 <td></td>
@@ -14,6 +15,7 @@
         <tbody>
             <% for(var i = 0; i < list.length; i++) { %>
             <tr>
+                <td><img width="48" src="uploads/<%= list[i].img %>" alt="Logo do <%- list[i].name %>"></td>
                 <td><%- list[i].name %></td>
                 <td><%- list[i].acronym %></td>
                 <td>
